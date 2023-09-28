@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import CartProvider from "@/context/CartProvider";
 
 export const metadata: Metadata = {
   title: "Mobile UI",
@@ -13,7 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="max-w-md mx-auto bg-gray-500">
+        <CartProvider>{children}</CartProvider>
+      </body>
     </html>
   );
 }
